@@ -1,0 +1,43 @@
+{
+    "name" : "AI智能助手",
+    "appid" : "__UNI__D8AA0CD",
+    "description" : "",
+    "versionName" : "0.1.0",
+    "versionCode" : "100",
+    "transformPx" : false,
+    "mp-weixin" : {
+        "appid" : "wx9b218ed752f91136",
+        "setting" : {
+            "ignoreDevUnusedFiles" : false,
+            "ignoreUploadUnusedFiles" : false,
+            "urlCheck" : false,
+            "es6" : true,
+            "minified" : true,
+            "postcss" : true
+        },
+        "usingComponents" : true,
+        "darkmode" : true
+    },
+    "uniStatistics" : {
+        "enable" : false
+    },
+    "vueVersion" : "3",
+    "app-plus" : {
+        "modules" : {
+            "OAuth" : {}
+        },
+        "distribute" : {
+            "android" : {
+                "permissions" : []
+            },
+            "sdkConfigs" : {
+                "oauth" : {
+                    "weixin" : {
+                        "appid" : "wx9b218ed752f91136",
+                        "UniversalLinks" : ""
+                    }
+                }
+            }
+        }
+    }
+}
