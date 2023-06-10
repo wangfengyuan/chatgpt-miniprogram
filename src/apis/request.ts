@@ -6,7 +6,7 @@ export interface Result<T = any> {
 }
 
 const baseUrl = {
-  dev: 'http://9.134.71.122:3000',
+  dev: 'http://localhost:3000',
   production: 'https://aichat.codefe.top',
 }
 
@@ -26,7 +26,7 @@ class Request {
     return new Promise((resolve, reject) => {
       let result: any
       uni.request({
-        url: `${baseUrl.dev}${url}`,
+        url: `${baseUrl.production}${url}`,
         method,
         timeout: 15000,
         header: {
@@ -39,13 +39,13 @@ class Request {
         },
         data,
         success: (res: any) => {
-          console.log('-----res', res)
           if (res.statusCode === 401) {
             return uni.navigateTo({
               url: '/pages/login',
             })
           }
-          if (res.header['transfer-encoding'] === 'chunked' && typeof res.data === 'string')
+          console.log('request res', res);
+          if (res.header['Transfer-Encoding'] === 'chunked' && typeof res.data === 'string')
             return resolve(res.data)
 
           result = res.data

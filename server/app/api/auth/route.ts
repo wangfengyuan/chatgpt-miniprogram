@@ -15,7 +15,6 @@ export async function POST(req: NextRequest) {
   const { code } = body;
   const response = await fetch(`https://api.weixin.qq.com/sns/jscode2session?appid=${WX_APPID}&secret=${WX_SECRET}&js_code=${code}&grant_type=authorization_code`)
   const jscode2session = await response.json();
-  console.log('jscode2session', jscode2session)
 
   let user: Partial<User | null> = await prisma.user.findUnique({
     where: {

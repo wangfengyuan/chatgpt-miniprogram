@@ -10,8 +10,6 @@ const mpWxLogin = async () => {
       code,
     })
 
-    console.log('login res', res)
-
     setToken(res.token)
     user.setUserInfo(res.user)
     uni.showToast({

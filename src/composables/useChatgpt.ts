@@ -13,14 +13,14 @@ export function useChatgpt() {
       const res = await getChatStream({
         messages,
       })
-
-      console.log('res', res)
+      console.log('------', res)
       if (res) {
         output.value = res
         user.updateCredit(user.credit - 1)
       }
     }
     catch (e: any) {
+      console.log('------', e)
       uni.showToast({
         title: e.message,
         icon: 'error',

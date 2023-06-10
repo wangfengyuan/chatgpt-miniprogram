@@ -30,7 +30,6 @@ export async function middleware(req: NextRequest) {
       response.headers.set("X-USER-ID", sub);
     }
   } catch (error) {
-    console.log('error', error)
     return getErrorResponse(401, "Token is invalid or user doesn't exists");
   }
 
