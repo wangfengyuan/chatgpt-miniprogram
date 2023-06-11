@@ -15,8 +15,8 @@ const showAboutPop = ref(false)
 
 const logOut = () => user.logOut()
 const description = ref(`
-  1、本站系统调用官方接口，数据由官方返回，高峰期官方api也会存在调用超时的可能，并且小程序不支持流式返回，因此回答会有延迟，请耐心等待
-  2、因为官方api收费，因此每人每天可获得15次使用机会
+  1、高峰期api也会存在调用超时的可能，并且小程序不支持流式返回，因此回答会有延迟，请耐心等待
+  2、因为api收费，因此每人每天可获得15次使用机会
   3、本应用不会存储任何聊天记录和生成内容
 `)
 const { onShareTimeline, onShareAppMessage } = useShare()

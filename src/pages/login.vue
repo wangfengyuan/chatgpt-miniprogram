@@ -36,7 +36,7 @@ const mpWxLogin = async () => {
       :auto-back="true"
     />
     <div class="imgDiv">
-      <image src="https://cos.codefe.top/images/analysis.png" mode="aspectFill" />
+      <image src="https://cos.codefe.top/images/aichat-icon.png" mode="aspectFill" />
     </div>
     <view class="text-center">
       <h1 class="text-lg font-bold text-black">
