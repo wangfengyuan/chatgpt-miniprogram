@@ -8,6 +8,7 @@ const openTip = () => {
     content: text,
   })
 }
+const { onShareTimeline, onShareAppMessage } = useShare()
 </script>
 
 <template>

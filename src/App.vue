@@ -8,8 +8,6 @@ onLaunch(async () => {
   const newUserInfo = await getUserInfo()
   user.setUserInfo(newUserInfo)
 })
-onShow(() => {})
-onHide(() => {})
 </script>
 
 <style lang="scss">

@@ -67,7 +67,7 @@ const config = [
     },
   },
   {
-    icon: 'https://mp-7772c90a-7206-4a36-8ba8-82747c24b2e6.cdn.bspapp.com/cloudstorage/8d96fbce-667d-4261-9fbd-04e9de391481.png',
+    icon: 'https://cos.codefe.top/images/xiaohongshu_icon.png',
     title: '小红书风格模拟器',
     desc: '输入你想发布的内容，帮你生成小红书的风格 ',
     url: './generic/index',
@@ -117,7 +117,7 @@ const config = [
     },
   },
   {
-    icon: 'https://mp-7772c90a-7206-4a36-8ba8-82747c24b2e6.cdn.bspapp.com/cloudstorage/31aa5120-3cde-4827-a9d8-643a95c51e77.png',
+    icon: 'https://cos.codefe.top/images/roadblock.png',
     title: '施工中',
     desc: '敬请期待',
     url: './generic/index',

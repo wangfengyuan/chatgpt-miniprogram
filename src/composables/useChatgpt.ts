@@ -10,19 +10,19 @@ export function useChatgpt() {
     loading.value = true
     output.value = ''
     try {
-      const res = await getChatStream({
+      const res: any = await getChatStream({
         messages,
       })
-      console.log('------', res)
-      if (res) {
+      if (typeof res === 'string') {
         output.value = res
-        user.updateCredit(user.credit - 1)
+      } else if (typeof res === 'object' && res.choices) {
+        output.value = res.choices[0].content;
       }
+      user.updateCredit(user.credit - 1)
     }
     catch (e: any) {
-      console.log('------', e)
       uni.showToast({
-        title: e.message,
+        title: e.message || '超时请重试',
         icon: 'error',
       })
     }

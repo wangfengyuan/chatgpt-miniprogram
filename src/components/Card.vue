@@ -19,11 +19,11 @@ const isActive = computed(() => props.card.status !== 0)
 const goDetail = (card) => {
   if (!isActive.value)
     return
-  // loginIntercept(() => {
+  loginIntercept(() => {
     uni.navigateTo({
       url: `${card.url}${isGeneric ? `?from=${card.id}` : ''}`,
     })
-  // })
+  })
 }
 </script>
 

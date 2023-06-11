@@ -5,6 +5,7 @@ import useStore from '../stores'
 const { user } = useStore()
 const mpWxLogin = async () => {
   const { code } = await uni.login()
+  uni.showLoading()
   try {
     const res = await login({
       code,
@@ -23,6 +24,7 @@ const mpWxLogin = async () => {
   catch (error) {
     mpWxLogin()
   }
+  uni.hideLoading()
 }
 </script>
 
@@ -34,7 +36,7 @@ const mpWxLogin = async () => {
       :auto-back="true"
     />
     <div class="imgDiv">
-      <image src="https://mp-7772c90a-7206-4a36-8ba8-82747c24b2e6.cdn.bspapp.com/cloudstorage/e890e8b2-2427-466c-818b-70c66bbd9288.png" mode="aspectFill" />
+      <image src="https://cos.codefe.top/images/analysis.png" mode="aspectFill" />
     </div>
     <view class="text-center">
       <h1 class="text-lg font-bold text-black">

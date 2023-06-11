@@ -2,7 +2,7 @@
 import { loginIntercept } from '../apis/login.ts'
 import useStore from '../stores'
 const { user } = useStore()
-const pic = computed(() => user.id ? 'https://mp-7772c90a-7206-4a36-8ba8-82747c24b2e6.cdn.bspapp.com/cloudstorage/cb7c76b2-4072-4d80-a9ff-f44eba383cfd.png' : '')
+const pic = computed(() => user.id ? 'https://cos.codefe.top/images/bear-avatar.png' : '')
 const login = () => {
   loginIntercept(() => {
     uni.switchTab({
@@ -19,6 +19,7 @@ const description = ref(`
   2、因为官方api收费，因此每人每天可获得15次使用机会
   3、本应用不会存储任何聊天记录和生成内容
 `)
+const { onShareTimeline, onShareAppMessage } = useShare()
 </script>
 
 <template>

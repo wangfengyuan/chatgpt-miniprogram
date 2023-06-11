@@ -6,8 +6,8 @@ const { user } = useStore()
 const shareApp = () => {
   onShareAppMessage(() => {
     return {
-      title: '这个回答太有趣了22',
-      path: `/pages/chat/index?messages=${JSON.stringify([])}`,
+      title: '这个回答太有趣了',
+      path: `/pages/chat/index?messages=${JSON.stringify(messageShowList.value)}`,
     }
   })
 }
@@ -55,7 +55,7 @@ const handleButtonClick = async () => {
   ]
   inputValue.value = ''
   try {
-    const generateText = await generate(messageList.value)
+    const generateText = await generate(messageList.value.slice(0, messageList.value.length - 1))
     messageList.value.pop()
     if (generateText) {
       messageList.value.push({

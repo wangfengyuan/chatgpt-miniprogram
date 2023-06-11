@@ -45,7 +45,7 @@ class Request {
             })
           }
           console.log('request res', res);
-          if (res.header['Transfer-Encoding'] === 'chunked' && typeof res.data === 'string')
+          if (res.header['transfer-encoding'] === 'chunked' && typeof res.data === 'string')
             return resolve(res.data)
 
           result = res.data

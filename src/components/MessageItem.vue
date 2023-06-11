@@ -11,20 +11,18 @@ const props = defineProps({
     type: Boolean,
   },
 })
-const userAvatar = 'https://mp-7772c90a-7206-4a36-8ba8-82747c24b2e6.cdn.bspapp.com/cloudstorage/cb7c76b2-4072-4d80-a9ff-f44eba383cfd.png'
-const aiAvatar = 'https://mp-7772c90a-7206-4a36-8ba8-82747c24b2e6.cdn.bspapp.com/cloudstorage/15d2061e-51f2-42b8-a305-df83f95d96de.png'
 const config = {
   system: {
     className: 'bg-blue-400',
-    icon: aiAvatar,
+    icon: 'https://cos.codefe.top/images/robot_1f916.png',
   },
   user: {
     className: 'mr-2 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl bg-blue-400',
-    icon: userAvatar.value,
+    icon: 'https://cos.codefe.top/images/bear-avatar.png',
   },
   assistant: {
     className: 'ml-2 rounded-br-3xl rounded-tl-xl rounded-tr-3xl bg-gray-400',
-    icon: aiAvatar,
+    icon: 'https://cos.codefe.top/images/robot_1f916.png',
   },
 }
 const { loading, role, content } = toRefs(props)
@@ -40,7 +38,7 @@ const copy = async (tranformed) => {
 </script>
 
 <template>
-  <div class="mb-2 flex" :class="role !== 'user' ? 'justify-start flex-row-reverse justify-end' : 'justify-end'">
+  <div class="mb-2 flex" :class="role !== 'user' ? 'justify-end flex-row-reverse' : 'justify-end'">
     <div
       class="px-3 py-2 text-white"
       :class="config[role].className"
