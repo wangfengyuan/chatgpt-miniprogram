@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
       },
     })
   }
-  const token = await signJWT({ sub: user.id! }, { exp: '1h' });
+  const token = await signJWT({ sub: user.id! }, { exp: '7d' });
   delete user.wx_openid;
   return new Response(JSON.stringify({
     status: "success",

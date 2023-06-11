@@ -39,13 +39,12 @@ class Request {
         },
         data,
         success: (res: any) => {
-          if (res.statusCode === 401) {
+          if (/chat-stream/.test(url) && res.statusCode === 401) {
             return uni.navigateTo({
               url: '/pages/login',
             })
           }
-          console.log('request res', res);
-          if (res.header['transfer-encoding'] === 'chunked' && typeof res.data === 'string')
+          if (typeof res.data === 'string')
             return resolve(res.data)
 
           result = res.data

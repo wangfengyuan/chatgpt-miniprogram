@@ -5,8 +5,12 @@ const { user } = useStore()
 onLaunch(async () => {
   if (!user.logged)
     return
-  const newUserInfo = await getUserInfo()
-  user.setUserInfo(newUserInfo)
+  try {
+    const newUserInfo = await getUserInfo()
+    user.setUserInfo(newUserInfo)
+  } catch (error) {
+    
+  }
 })
 </script>
 

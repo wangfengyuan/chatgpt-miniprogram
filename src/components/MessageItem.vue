@@ -35,10 +35,15 @@ const copy = async (tranformed) => {
     duration: 1500,
   })
 }
+const className = computed(() => role.value === 'system'
+  ? 'hidden'
+  : role.value !== 'user' 
+    ? 'flex justify-end flex-row-reverse' 
+    : 'flex justify-end')
 </script>
-
+ 
 <template>
-  <div class="mb-2 flex" :class="role !== 'user' ? 'justify-end flex-row-reverse' : 'justify-end'">
+  <div class="mb-2" :class="className">
     <div
       class="px-3 py-2 text-white"
       :class="config[role].className"

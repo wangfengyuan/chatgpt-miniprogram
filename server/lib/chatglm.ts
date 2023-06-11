@@ -1,11 +1,6 @@
+import { ChatGPTMessage } from "./openAIStream";
+
 const jwt = require('jsonwebtoken')
-
-export type ChatGPTAgent = "user" | "system";
-
-export interface ChatGPTMessage {
-  role: ChatGPTAgent;
-  content: string;
-}
 
 export default async function chatglm(messages: ChatGPTMessage[]) {
 
@@ -22,7 +17,7 @@ export default async function chatglm(messages: ChatGPTMessage[]) {
 
   const token = jwt.sign({ 
     "api_key": key,
-    "exp": new Date().getTime() + 300000,
+    "exp": new Date().getTime() + 3000,
     "timestamp": new Date().getTime(),
    }, secret, { algorithm: 'HS256', header: { sign_type: "SIGN"  }});
    
