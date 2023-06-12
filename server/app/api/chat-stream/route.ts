@@ -1,8 +1,6 @@
 import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
 import prisma from '@/lib/db'
 import { ChatGPTMessage, OpenAIStream, OpenAIStreamPayload } from "@/lib/openAIStream";
-import chatglm from "@/lib/chatglm"
 import { User } from "@prisma/client";
 
 const handler = async (req: NextRequest) => {
@@ -45,45 +43,18 @@ const handler = async (req: NextRequest) => {
     stream: true,
   };
 
-  if (process.env.GLM_API_KEY) {
-    const filteredMessages = messages.filter((m: ChatGPTMessage) => m.role !== 'system')
-    const res = await chatglm(filteredMessages);
-    if (res.code === 200) {
-      !isAdmin && await prisma.user.update({
-        where: {
-          id: userId!,
-        },
-        data: {
-          credit: {
-            decrement: 1
-          },
-        },
-      })
-      return NextResponse.json({
-        status: 'success',
-        ...res,
-      })
-
-    } else {
-      return NextResponse.json({
-        status: 'fail',
-        ...res,
-      })
-    }
-  } else {
-    const stream = await OpenAIStream(payload);
-    !isAdmin && await prisma.user.update({
-      where: {
-        id: userId!,
+  const stream = await OpenAIStream(payload);
+  !isAdmin && await prisma.user.update({
+    where: {
+      id: userId!,
+    },
+    data: {
+      credit: {
+        decrement: 1
       },
-      data: {
-        credit: {
-          decrement: 1
-        },
-      },
-    })
-    return new Response(stream);
-  }
+    },
+  })
+  return new Response(stream);
 
 };
 
