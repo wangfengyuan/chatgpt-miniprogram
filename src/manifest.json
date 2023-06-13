@@ -1,12 +1,12 @@
 {
-    "name" : "AI智能助手",
+    "name" : "AI问答Bot",
     "appid" : "__UNI__D8AA0CD",
     "description" : "",
     "versionName" : "0.1.0",
     "versionCode" : "100",
     "transformPx" : false,
     "mp-weixin" : {
-        "appid" : "wx9b218ed752f91136",
+        "appid" : "wxf5dc1d8d1ecbaaa8",
         "setting" : {
             "ignoreDevUnusedFiles" : false,
             "ignoreUploadUnusedFiles" : false,
@@ -33,7 +33,7 @@
             "sdkConfigs" : {
                 "oauth" : {
                     "weixin" : {
-                        "appid" : "wx9b218ed752f91136",
+                        "appid" : "wxf5dc1d8d1ecbaaa8",
                         "UniversalLinks" : ""
                     }
                 }

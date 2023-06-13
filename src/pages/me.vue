@@ -25,9 +25,9 @@ const { onShareTimeline, onShareAppMessage } = useShare()
 <template>
   <view id="me" class="mx-4 mt-23">
     <u-navbar
-      title="智能AI助手"
+      title="AI问答Bot"
       left-icon=""
-      bg-color="#5eead4"
+      bg-color="#c084fc"
       :auto-back="false"
     />
     <div>
@@ -48,9 +48,9 @@ const { onShareTimeline, onShareAppMessage } = useShare()
         </view>
       </view>
 
-      <div v-if="user.logged" class="time-box mb-4 mt-2 flex items-center justify-between rounded-lg bg-[#5eead4] px-2 py-3 shadow-md">
+      <div v-if="user.logged" class="time-box mb-4 mt-2 flex items-center justify-between rounded-lg bg-[#c084fc] px-2 py-3 shadow-md">
         <span class="w-200px text-left">
-          今日剩余次数<span class="mx-1 text-xl text-purple-500">{{ user.credit }}</span>次
+          今日剩余次数<span class="mx-1 text-xl text-white">{{ user.credit }}</span>次
         </span>
         <button open-type="share" class="mx-0 h-30px flex items-center rounded-full text-sm">
           去分享

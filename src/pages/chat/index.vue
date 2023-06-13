@@ -15,7 +15,7 @@ shareApp()
 
 const messageList = ref([{
   role: 'system',
-  content: '你现在的身份是名为ChatGLM的AI人工智能助手，而不再是CHATGPT，你的任务是针对我的问题和要求提供适当的答复和支持'
+  content: '你现在的身份是名人工智能专家，你的任务是针对我的问题和要求提供适当的答复和支持'
 }])
 const inputValue = ref('')
 const isFromShare = ref(false)

@@ -14,14 +14,14 @@ const { onShareTimeline, onShareAppMessage } = useShare()
 <template>
   <div>
     <u-navbar
-      title="智能AI助手"
+      title="AI问答Bot"
       left-icon=""
-      bg-color="#5eead4"
+      bg-color="#c084fc"
       :auto-back="false"
     />
     <div id="home" class="mx-2 mt-23">
       <div class="overflow-hidden rounded-full text-white">
-        <u-notice-bar :text="text" mode="link" custom-class="text-white" color="" bg-color="#5eead4" @click="openTip" />
+        <u-notice-bar :text="text" mode="link" custom-class="text-white" color="" bg-color="#ec4899" @click="openTip" />
       </div>
       <div class="mt-2">
         <Card v-for="card in cardList" :key="card.title" :card="card" />

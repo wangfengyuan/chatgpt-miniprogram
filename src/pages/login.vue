@@ -31,8 +31,8 @@ const mpWxLogin = async () => {
 <template>
   <view class="app mt-10">
     <u-navbar
-      title="智能AI助手"
-      bg-color="#5eead4"
+      title="AI问答Bot"
+      bg-color="#c084fc"
       :auto-back="true"
     />
     <div class="imgDiv">
@@ -40,7 +40,7 @@ const mpWxLogin = async () => {
     </div>
     <view class="text-center">
       <h1 class="text-lg font-bold text-black">
-        智能AI助手
+        AI问答Bot
       </h1>
       <view class="my-2 text-sm opacity-80">
         上下文聊天, 邮件日周报生成, 写文案, 等你来试

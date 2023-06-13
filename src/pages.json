@@ -6,7 +6,7 @@
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "智能AI助手",
+    "navigationBarTitleText": "AI问答Bot",
     "navigationStyle": "custom"
   },
   "pages": [
